@@ -1,4 +1,4 @@
-import { IsAlpha, IsAlphanumeric, IsEmpty, IsNotEmpty, IsString } from "class-validator";
+import { IsAlpha, IsAlphanumeric, IsEmpty, IsNotEmpty, IsString, IsUrl } from "class-validator";
 
 export class CreateVehicleDto {
   @IsNotEmpty()
@@ -11,8 +11,10 @@ export class CreateVehicleDto {
   vehicleType: string;
 
   @IsEmpty()
+  @IsUrl()
   pucCertificate: string
 
   @IsEmpty()
+  @IsUrl()
   insuranceCertificate: string
 }

@@ -6,23 +6,23 @@ export class Vehicle {
   id: string;
   
   @Column({
-    name: "vehicle_number",
+    name: "vehicleNumber",
   })
   vehicleNumber: string;
 
   @Column({
-    name: "vehicle_type",
+    name: "vehicleType",
   })
   vehicleType: string;
 
   @Column({
-    name: "puc_certificate",
+    name: "pucCertificate",
     nullable: true,
   })
   pucCertificate: string;
 
   @Column({
-    name: "insurance_certificate",
+    name: "insuranceCertificate",
     nullable: true,
   })
   insuranceCertificate: string;

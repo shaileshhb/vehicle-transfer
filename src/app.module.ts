@@ -7,6 +7,7 @@ import { join } from 'path';
 import { AuthMiddleware } from './common/middleware/auth.middleware';
 import { UserModule } from './user/user.module';
 import { VehicleModule } from './vehicle/vehicle.module';
+import { VehicleTrackingModule } from './vehicle-tracking/vehicle-tracking.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { VehicleModule } from './vehicle/vehicle.module';
     }),
     UserModule,
     VehicleModule,
+    VehicleTrackingModule,
   ],
   controllers: [AppController],
   providers: [AppService],
