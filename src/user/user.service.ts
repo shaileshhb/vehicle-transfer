@@ -57,7 +57,7 @@ export class UserService {
     return users
   }
 
-  async findOne(id: number) {
+  async findOne(id: string) {
     const user = await this.userRepository.findOneBy({ id });
     if (!user) {
       throw new BadRequestException(`User with id ${id} not found.`);
@@ -68,17 +68,18 @@ export class UserService {
     return user
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return this.userRepository.update(id, updateUserDto);
+  update(id: string, userDto: UpdateUserDto) {
+    return this.userRepository.update(id, userDto);
   }
 
-  async delete(id: number) {
+  async delete(id: string) {
     const user = await this.userRepository.findOneBy({ id })
 
     if (!user) {
       throw new BadRequestException(`User with id ${id} not found.`);
     }
 
-    throw new Error(`User with id ${id} not found.`);
+    await this.userRepository.delete({ id })
+    return { id }
   }
 }
